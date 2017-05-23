@@ -14,14 +14,16 @@ def reply(tweet):
         berlin_time = datetime.now(timezone('Europe/Berlin'))
         date = berlin_time.strftime("It is %H:%M:%S on a %A (%d-%m-%Y).")
         return "Hi @" + user + "! " + date
-     if "+" in message:
+    if "+" in message:
         string1 = message.split('+')
         return str(int(string1[0]) + int(string1[1]))
     return None
 
 def idle_text():
-    # Some more ideas: https://www.programmableweb.com/category/humor/api
-    data = get('https://api.chucknorris.io/jokes/random').json()
-    joke = data['value']
-    text = berlin_time.strftime("It is %H:%M:%S on a %A (%d-%m-%Y).")
+    """Return text that is tweeted when not replying"""
+    # Construct the text we want to tweet out (140 chars max)
+    berlin_time = datetime.now(timezone('Europe/Berlin'))
+    text = "@HPI_DE HPI Bot Test"
+	# nberlin_time.strftime("It is %H:%M:%S on a %A (%d-%m-%Y).")
+    return text
 
