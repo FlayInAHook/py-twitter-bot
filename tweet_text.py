@@ -14,7 +14,7 @@ def reply(tweet):
         berlin_time = datetime.now(timezone('Europe/Berlin'))
         date = berlin_time.strftime("It is %H:%M:%S on a %A (%d-%m-%Y).")
         return "Hi @" + user + "! " + date
-     if "+" in message:
+    if "+" in message:
         string1 = message.split('+')
         return str(int(string1[0]) + int(string1[1]))
     return None
