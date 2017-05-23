@@ -8,19 +8,16 @@ from tweet_text import idle_text
 # In unittest, test cases are represented by instances of unittest's TestCase class.
 # To make your own test cases you must write subclasses of TestCase.
 
-class TestTweetText(unittest.TestCase):
-    # This is called immediately before calling each test method
-    def setUp(self):
-        self.text = idle_text()
 
-    def test_start(self):
+class TestTweetText(unittest.TestCase):
+
+    def test_idle(self):
         # In order to test something, we use one of the assert*()
         # methods provided by the TestCase base class
         # https://docs.python.org/2/library/unittest.html#unittest.TestCase.assertTrue
-        self.assertTrue(self.text.startswith('It is'))
+        self.assertTrue( isinstance(idle_text(), str) )
 
-    def test_end(self):
-        self.assertTrue(self.text.endswith('.'))
 
-if __name__ == '__main__':
-    unittest.main(verbosity=2)
+
+#if __name__ == '__main__':
+#    unittest.main(verbosity=2)
